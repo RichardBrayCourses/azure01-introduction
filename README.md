@@ -83,7 +83,7 @@ brew install azure-cli
 az bicep install
 brew install --cask dotnet-sdk
 dotnet tool install --global dotnet-ef
-npm install -g pnpm
+brew install pnpm
 ```
 
 ### Step 4 - Configure Git
