@@ -9,12 +9,15 @@ To get started you will need the following software installed:
 - git (including the Git Credential Manager)
 - Visual Studio Code
 - Azure Command Line Interface (Azure CLI)
+- Azure Bicep CLI
+- .NET SDK
+- Entity Framework Core CLI tools
 - pnpm (package manager)
 
-Later on in the course we will also use:
+The course uses Azure SQL Database Serverless with Entity Framework Core migrations, so you do not need to install:
 
-- PostgreSQL tools (pgAdmin)
-- Redgate Flyway (database versioning)
+- PostgreSQL or pgAdmin
+- Redgate Flyway
 - Docker
 
 For now, let's focus on the core tools above.
@@ -58,6 +61,9 @@ brew install node
 brew install --cask git-credential-manager
 brew install --cask visual-studio-code
 brew install azure-cli
+az bicep install
+brew install --cask dotnet-sdk
+dotnet tool install --global dotnet-ef
 brew install pnpm
 ```
 
@@ -79,12 +85,15 @@ winget install Git.Git
 winget install OpenJS.NodeJS
 winget install Microsoft.VisualStudioCode
 winget install Microsoft.AzureCLI
+az bicep install
+winget install Microsoft.DotNet.SDK.8
 ```
 
 Then:
 
 ```powershell
 npm install -g pnpm
+dotnet tool install --global dotnet-ef
 ```
 
 Configure git:
@@ -117,15 +126,13 @@ Create a resource group:
 az group create --name course-dev --location uksouth
 ```
 
-# Bicep
+# First Deployment
 
-Verify Bicep is available:
+Before deploying, verify Bicep is available:
 
 ```bash
 az bicep version
 ```
-
-# First Deployment
 
 ```bash
 az deployment group create \
@@ -139,6 +146,7 @@ At the end of this section you should be able to:
 
 - Install Azure development tools
 - Login to Azure using Azure CLI
+- Verify .NET and Entity Framework Core tooling
 - Understand subscriptions
 - Understand resource groups
 - Deploy infrastructure using Bicep
