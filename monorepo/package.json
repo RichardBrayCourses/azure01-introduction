@@ -1,0 +1,11 @@
+{
+  "name": "root",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "azure-login": "az login",
+    "resource-group-create": "echo Create resource group using Azure CLI",
+    "deploy": "echo Deploy Bicep template",
+    "destroy": "echo Delete resource group"
+  }
+}
